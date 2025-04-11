@@ -6,6 +6,8 @@
   --light-text: #636e72;
   --background: #f5f6fa;
   --white: #ffffff;
+  --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
 }
 
 * {
@@ -16,6 +18,7 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16px;
 }
 
 body {
@@ -24,6 +27,7 @@ body {
   color: var(--text-color);
   line-height: 1.6;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .cursor {
@@ -34,7 +38,8 @@ body {
   position: fixed;
   pointer-events: none;
   z-index: 9999;
-  transition: transform 0.2s ease;
+  transition: var(--transition);
+  transform: translate(-50%, -50%);
 }
 
 .navbar {
@@ -45,7 +50,7 @@ body {
   backdrop-filter: blur(10px);
   z-index: 1000;
   padding: 1rem 0;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
 }
 
 .nav-content {
@@ -68,11 +73,23 @@ body {
   text-decoration: none;
   margin-left: 2rem;
   font-weight: 500;
-  transition: color 0.3s ease;
+  transition: var(--transition);
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: var(--secondary-color);
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--secondary-color);
+  transition: var(--transition);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .hero {
@@ -86,6 +103,7 @@ body {
   text-align: center;
   color: var(--white);
   position: relative;
+  padding-top: 60px;
 }
 
 .hero-content {
@@ -98,28 +116,40 @@ body {
   font-size: 4rem;
   margin-bottom: 1rem;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero h2 {
   font-size: 1.5rem;
   margin-bottom: 2rem;
   font-weight: 400;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-location {
   margin-bottom: 2rem;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .hero-links a {
   color: var(--white);
   font-size: 1.5rem;
-  margin: 0 1rem;
-  transition: color 0.3s ease;
+  transition: var(--transition);
 }
 
 .hero-links a:hover {
   color: var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 #tech-animation {
@@ -137,11 +167,28 @@ section {
   margin: 0 auto;
 }
 
+.content-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 section h2 {
   font-size: 2.5rem;
   margin-bottom: 3rem;
   color: var(--primary-color);
   text-align: center;
+  position: relative;
+}
+
+section h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background: var(--secondary-color);
 }
 
 .about p {
@@ -162,8 +209,8 @@ section h2 {
   background: var(--white);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
 }
 
 .skill-category:hover {
@@ -173,6 +220,7 @@ section h2 {
 .skill-category h3 {
   color: var(--secondary-color);
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .timeline {
@@ -201,8 +249,13 @@ section h2 {
   background: var(--white);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
   position: relative;
+  transition: var(--transition);
+}
+
+.timeline-content:hover {
+  transform: translateX(5px);
 }
 
 .timeline-content::before {
@@ -224,17 +277,69 @@ section h2 {
 .timeline-content h4 {
   color: var(--light-text);
   margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+.timeline-content ul {
+  list-style-position: inside;
+  margin-left: 1rem;
+}
+
+.timeline-content li {
+  margin-bottom: 0.5rem;
 }
 
 .date {
   color: var(--accent-color);
   font-weight: 500;
+  display: block;
+  margin-bottom: 1rem;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 2rem;
+}
+
+.project-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+}
+
+.project-tags span {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition);
+}
+
+.project-link:hover {
+  color: var(--accent-color);
 }
 
 .education-grid {
@@ -247,7 +352,22 @@ section h2 {
   background: var(--white);
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--card-shadow);
+  transition: var(--transition);
+}
+
+.education-item:hover {
+  transform: translateY(-5px);
+}
+
+.education-item h3 {
+  color: var(--secondary-color);
+  margin-bottom: 0.5rem;
+}
+
+.education-item p {
+  color: var(--light-text);
+  margin-bottom: 1rem;
 }
 
 footer {
@@ -268,17 +388,27 @@ footer {
 
 .contact-info p {
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
 }
 
 .social-links a {
   color: var(--white);
   font-size: 1.5rem;
-  margin: 0 1rem;
-  transition: color 0.3s ease;
+  transition: var(--transition);
 }
 
 .social-links a:hover {
   color: var(--secondary-color);
+  transform: translateY(-3px);
 }
 
 #snake-game {
@@ -287,6 +417,7 @@ footer {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
   margin: 2rem 0;
+  position: relative;
 }
 
 .copyright {
@@ -295,6 +426,10 @@ footer {
 }
 
 @media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+
   .hero h1 {
     font-size: 3rem;
   }
@@ -317,6 +452,10 @@ footer {
   
   .timeline-content::before {
     left: 20px;
+  }
+
+  .content-wrapper {
+    padding: 0 1rem;
   }
 }
 
