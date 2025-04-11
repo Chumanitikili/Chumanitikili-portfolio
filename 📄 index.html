@@ -5,67 +5,144 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chumani Tikili | Tech Portfolio</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 </head>
 <body>
-  <header>
-    <h1>Chumani Tikili</h1>
-    <h2>Customer Success | Cloud | Product Ops</h2>
-    <div class="links">
-      <a href="mailto:ctikili@gmail.com">Email</a>
-      <a href="https://www.linkedin.com/in/chumani-tikili-720a33172/">LinkedIn</a>
-      <a href="https://github.com/Chumanitikili">GitHub</a>
+  <div class="cursor"></div>
+  
+  <nav class="navbar">
+    <div class="nav-content">
+      <div class="logo">CT</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </header>
+  </nav>
 
-  <section class="about">
-    <h3>About Me</h3>
-    <p>
-      Tech professional with 6+ years’ experience in cloud systems, customer success, and technical support. I love solving business problems with cloud, APIs, data, and user-centered product thinking.
-    </p>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>CHUMANI TIKILI</h1>
+      <h2>Cloud | DevOps | Product Management</h2>
+      <div class="hero-location">
+        <i class="fas fa-map-marker-alt"></i> Cape Town, South Africa
+      </div>
+      <div class="hero-links">
+        <a href="mailto:ctikili@gmail.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://www.linkedin.com/in/chumani-tikili-720a33172/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Chumanitikili"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div id="tech-animation"></div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>PROFESSIONAL SUMMARY</h2>
+    <p>Results-driven tech professional with 6+ years of progressive experience across fintech, telecoms, and enterprise IT, with a focus on product support, digital transformation, and technical operations. Skilled in cloud technologies (AWS, Azure), DevOps practices, and implementing scalable tools to drive customer satisfaction and product adoption. Adept at cross-functional collaboration, using data to inform business strategy, and building automation through APIs, webhooks, and CI/CD workflows. Proven impact in fast-paced SaaS and cloud environments.</p>
   </section>
 
   <section class="skills">
-    <h3>Tech Stack</h3>
-    <ul>
-      <li>Python, JavaScript, HTML5, CSS3</li>
-      <li>Flask, Django, Vue.js, Flutter</li>
-      <li>AWS, Azure, Docker, Terraform</li>
-      <li>SQL, BigQuery, Elasticsearch</li>
-      <li>Jira, Confluence, GitHub, Slack</li>
-    </ul>
+    <h2>TECHNICAL SKILLS</h2>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <h3>Languages & Web</h3>
+        <p>Python, JavaScript, HTML5, CSS3</p>
+      </div>
+      <div class="skill-category">
+        <h3>Frameworks & Tools</h3>
+        <p>Flask, Django, Vue.js, Flutter, Git, GitHub</p>
+      </div>
+      <div class="skill-category">
+        <h3>Cloud & DevOps</h3>
+        <p>AWS, Microsoft Azure, Docker, Terraform, CI/CD pipelines</p>
+      </div>
+      <div class="skill-category">
+        <h3>Databases</h3>
+        <p>SQL, Google BigQuery, Elasticsearch</p>
+      </div>
+      <div class="skill-category">
+        <h3>OS & Infra</h3>
+        <p>Linux, Windows, macOS, Server Setup</p>
+      </div>
+      <div class="skill-category">
+        <h3>Project & Communication</h3>
+        <p>Jira, Confluence, Slack, Teams, Zoom</p>
+      </div>
+    </div>
   </section>
 
-  <section class="projects">
-    <h3>Projects</h3>
-    <ul>
-      <li>
-        <strong>GitHub Repos</strong> – Visit my <a href="https://github.com/Chumanitikili">GitHub</a> to view my work including API integrations, DevOps pipelines, and cloud app prototypes.
-      </li>
-      <!-- You can manually feature repos by cloning descriptions -->
-    </ul>
+  <section id="experience" class="experience">
+    <h2>PROFESSIONAL EXPERIENCE</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <h3>Hewlett Packard Enterprise (HPE)</h3>
+          <h4>Customer Success/Product Manager</h4>
+          <span class="date">Feb 2024 – Present</span>
+          <ul>
+            <li>Defined and executed customer success strategies, increasing product engagement by 20% through usage tracking and proactive check-ins.</li>
+            <li>Led the design and deployment of custom API integrations and Slack/MS Teams webhooks to streamline customer updates.</li>
+            <li>Collaborated with product and engineering teams to prioritize roadmap features based on customer feedback and data analysis.</li>
+            <li>Delivered success playbooks and adoption dashboards using cloud metrics and usage logs.</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Add other experience items following the same pattern -->
+    </div>
   </section>
 
-  <section class="experience">
-    <h3>Experience</h3>
-    <ul>
-      <li><strong>Hewlett Packard Enterprise</strong> – Customer Success / Product Manager (2024–Present)</li>
-      <li>Vox Telecom – NOC Tier 2 Support (2021–2023)</li>
-      <li>TymeDigital – Digital Banking Onboarding (2018–2019)</li>
-      <!-- Continue as needed -->
-    </ul>
+  <section id="projects" class="projects">
+    <h2>PROJECTS</h2>
+    <div class="projects-grid">
+      <!-- Add your GitHub projects here with descriptions -->
+    </div>
   </section>
 
   <section class="education">
-    <h3>Education & Certifications</h3>
-    <ul>
-      <li>BCom Info Systems – University of the Western Cape</li>
-      <li>Business Admin – UCT GSB</li>
-      <li>AWS Solutions Architect, Azure Fundamentals, CS50</li>
-    </ul>
+    <h2>EDUCATION & CERTIFICATIONS</h2>
+    <div class="education-grid">
+      <div class="education-item">
+        <h3>University of the Western Cape</h3>
+        <p>BCom Information Systems</p>
+        <span class="date">2017 – 2020</span>
+      </div>
+      <div class="education-item">
+        <h3>UCT Graduate School of Business</h3>
+        <p>Business Administration Certificate</p>
+        <span class="date">2021</span>
+      </div>
+      <div class="education-item">
+        <h3>Certifications</h3>
+        <ul>
+          <li>AWS Solutions Architect Professional (2022)</li>
+          <li>Microsoft Azure Fundamentals</li>
+          <li>CompTIA Network+ / Server+ / Linux+</li>
+          <li>Harvard CS50 – Intro to Computer Science</li>
+          <li>DevOps & CI/CD Foundations (SkillSoft)</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>© 2025 Chumani Tikili | Built with 💻 & ☕</p>
+  <footer id="contact">
+    <div class="footer-content">
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +27 794 520 973</p>
+        <p><i class="fas fa-envelope"></i> ctikili@gmail.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Cape Town, South Africa</p>
+      </div>
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/chumani-tikili-720a33172/"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Chumanitikili"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div id="snake-game"></div>
+    <p class="copyright">© 2024 Chumani Tikili | Built with 💻 & ☕</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
